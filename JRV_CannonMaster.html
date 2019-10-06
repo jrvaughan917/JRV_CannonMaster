@@ -35,17 +35,17 @@
 			<table style='color:black'>
 			<tr>
 				<td>
-					<span id='countFish'></button>
-				</td>
-			</tr>
-			<tr>
-				<td>
 					<span id='countBirds'></button>
 				</td>
 			</tr>
 			<tr>
 				<td>
 					<span id='countBoats'></button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<span id='countFish'></button>
 				</td>
 			</tr>
 			<tr>
@@ -298,18 +298,18 @@
 		}
 		
 		// check for bird collision
-		if (cannonBallX >= bird1X && cannonBallX <= bird1X + 50 && cannonBallY >= bird1Y -10 && cannonBallY <= bird1Y + 10) { window.alert('bird hit!'); bird1X = -140; scoreBirds++; updateScoreScreen(); }
-		if (cannonBallX >= bird2X && cannonBallX <= bird2X + 50 && cannonBallY >= bird2Y -10 && cannonBallY <= bird2Y + 10) { window.alert('bird hit!'); bird2X = -240; scoreBirds++; updateScoreScreen(); }
-		if (cannonBallX >= bird3X && cannonBallX <= bird3X + 50 && cannonBallY >= bird3Y -10 && cannonBallY <= bird3Y + 10) { window.alert('bird hit!'); bird3X = -340; scoreBirds++; updateScoreScreen(); }
-		if (cannonBallX >= bird4X && cannonBallX <= bird4X + 50 && cannonBallY >= bird4Y -10 && cannonBallY <= bird4Y + 10) { window.alert('bird hit!'); bird4X = -440; scoreBirds++; updateScoreScreen(); }
+		if (cannonBallX >= bird1X && cannonBallX <= bird1X + 50 && cannonBallY >= bird1Y -10 && cannonBallY <= bird1Y + 10) { bird1X = -140; scoreBirds++; updateScoreScreen(); }
+		if (cannonBallX >= bird2X && cannonBallX <= bird2X + 50 && cannonBallY >= bird2Y -10 && cannonBallY <= bird2Y + 10) { bird2X = -240; scoreBirds++; updateScoreScreen(); }
+		if (cannonBallX >= bird3X && cannonBallX <= bird3X + 50 && cannonBallY >= bird3Y -10 && cannonBallY <= bird3Y + 10) { bird3X = -340; scoreBirds++; updateScoreScreen(); }
+		if (cannonBallX >= bird4X && cannonBallX <= bird4X + 50 && cannonBallY >= bird4Y -10 && cannonBallY <= bird4Y + 10) { bird4X = -440; scoreBirds++; updateScoreScreen(); }
 		
 		// squid collision
-		if (cannonBallX >= squid1X && cannonBallX <= squid1X + 20 && cannonBallY >= squid1Y -10 && cannonBallY <= squid1Y + 75) { window.alert('squid hit!'); squid1X = boatMin; scoreSquid++; updateScoreScreen(); }
-		if (cannonBallX >= squid2X && cannonBallX <= squid2X + 20 && cannonBallY >= squid2Y -10 && cannonBallY <= squid2Y + 75) { window.alert('squid hit!'); squid2X = boatMin; scoreSquid++; updateScoreScreen(); }
+		if (cannonBallX >= squid1X && cannonBallX <= squid1X + 20 && cannonBallY >= squid1Y -10 && cannonBallY <= squid1Y + 75) { squid1X = boatMin; scoreSquid++; updateScoreScreen(); }
+		if (cannonBallX >= squid2X && cannonBallX <= squid2X + 20 && cannonBallY >= squid2Y -10 && cannonBallY <= squid2Y + 75) { squid2X = boatMin; scoreSquid++; updateScoreScreen(); }
 		
 		// fish collision
-		if (cannonBallX >= fish1X && cannonBallX <= fish1X + 75 && cannonBallY >= fish1Y -10 && cannonBallY <= fish1Y + 20) { window.alert('fish hit!'); fish1X = boatMin; scoreFish++; updateScoreScreen(); }
-		if (cannonBallX >= fish2X && cannonBallX <= fish2X + 75 && cannonBallY >= fish2Y -10 && cannonBallY <= fish2Y + 20) { window.alert('fish hit!'); fish2X = boatMin; scoreFish++; updateScoreScreen(); }
+		if (cannonBallX >= fish1X && cannonBallX <= fish1X + 75 && cannonBallY >= fish1Y -10 && cannonBallY <= fish1Y + 20) { fish1X = boatMin; scoreFish++; updateScoreScreen(); }
+		if (cannonBallX >= fish2X && cannonBallX <= fish2X + 75 && cannonBallY >= fish2Y -10 && cannonBallY <= fish2Y + 20) { fish2X = boatMin; scoreFish++; updateScoreScreen(); }
 			
 		if (cannonBallX > 0) { // cannonball on screen
 			cannonBallX += cannonBallXVelocity;
@@ -330,7 +330,6 @@
 			}
 		}
 		if (cannonBallX >= boatX && cannonBallX <= boatX + (windowWidth * .08) && cannonBallY >= (windowHeight * 0.46) -10 && cannonBallY <= (windowHeight * 0.52) + 10) { 
-			window.alert('enemy boat hit!'); 
 			boatX = -440; 
 			boatTicker = 0;
 			boatInterval += 1000;
