@@ -85,11 +85,6 @@
 			</tr>
 			<tr>
 				<td>
-					<span id='countScorePerMin'></button>
-				</td>
-			</tr>
-			<tr>
-				<td>
 					<span id='gameOver' style = 'color: red;'></button>
 				</td>
 			</tr>
@@ -215,7 +210,6 @@
 	var countAccuracy = document.getElementById("countAccuracy");
 	var countTime = document.getElementById("countTime");
 	var countScore = document.getElementById("countScore");
-	var countScorePerMin = document.getElementById("countScorePerMin");
 	var gameOver = document.getElementById("gameOver");
 	
 	updateScoreScreen();
@@ -277,8 +271,8 @@
 		if (squid1Horiz == 'left') { squid1.style.left = squid1X; squid1X -= 0.09; if (squid1X < boatMin) { squid1Horiz = 'right'; } } else { squid1.style.left = squid1X; squid1X += 0.12; if (squid1X > windowWidth - 60) { squid1Horiz = 'left'; } }
 		if (squid2Horiz == 'left') { squid2.style.left = squid2X; squid2X -= 0.08; if (squid2X < boatMin) { squid2Horiz = 'right'; } } else { squid2.style.left = squid2X; squid2X += 0.125; if (squid2X > windowWidth - 60) { squid2Horiz = 'left'; } }
 		
-		if (fish1Horiz == 'left') { fish1.style.left = fish1X; fish1X -= .75; if (fish1X < boatMin) { fish1Horiz = 'right'; } } else { fish1.style.left = fish1X; fish1X += .75; if (fish1X > windowWidth - 90) { fish1Horiz = 'left'; } }
-		if (fish2Horiz == 'left') { fish2.style.left = fish2X; fish2X -= .8; if (fish2X < boatMin) { fish2Horiz = 'right'; } } else { fish2.style.left = fish2X; fish2X += .8; if (fish2X > windowWidth - 90) { fish2Horiz = 'left'; } }
+		if (fish1Horiz == 'left') { fish1.style.left = fish1X; fish1X -= .75; if (fish1X < boatMin) { fish1Horiz = 'right'; } } else { fish1.style.left = fish1X; fish1X += .75; if (fish1X > windowWidth - 110) { fish1Horiz = 'left'; } }
+		if (fish2Horiz == 'left') { fish2.style.left = fish2X; fish2X -= .8; if (fish2X < boatMin) { fish2Horiz = 'right'; } } else { fish2.style.left = fish2X; fish2X += .8; if (fish2X > windowWidth - 110) { fish2Horiz = 'left'; } }
 		
 		boat.style.left = boatX;
 		if (boatX > 0) { // boat is on screen
@@ -407,7 +401,6 @@
 			countAccuracy.textContent = 'Accuracy: ' + parseFloat(scoreAccuracy * 100).toFixed(2) + '%';
 			countTime.textContent = 'Time: ' + scoreTime  + '/' + scoreTimeLimit;
 			countScore.textContent = 'Score: ' + (scoreFish + scoreBirds + scoreBoats + scoreSquid + scoreCrabs);
-			countScorePerMin.textContent = 'Score per minute: ' + parseFloat(scorePerMin).toFixed(2);
 			
 			if (scoreTime >= scoreTimeLimit) {
 				gameOver.textContent = 'GAME OVER';
